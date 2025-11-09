@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Roboto_Slab, Nunito_Sans } from "next/font/google";
+import { Roboto_Slab, Nunito_Sans, Lato } from "next/font/google";
 import "./globals.css";
 
 // New Hospital-friendly fonts
@@ -11,6 +11,12 @@ const robotoSlab = Roboto_Slab({
 
 const nunitoSans = Nunito_Sans({
   variable: "--font-nunito-sans",
+  subsets: ["latin"],
+  weight: ["400", "700"], // optional
+});
+
+const lato = Lato({
+  variable: "--font-lato",
   subsets: ["latin"],
   weight: ["400", "700"], // optional
 });
@@ -28,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${robotoSlab.variable} ${nunitoSans.variable} antialiased`}
+        className={`${robotoSlab.variable} ${nunitoSans.variable} ${lato.variable} antialiased`}
       >
         {children}
       </body>

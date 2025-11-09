@@ -166,3 +166,20 @@ span,
 button {
   font-family: var(--font-nunito-sans), sans-serif;
 }
+
+.text-roboto{
+  font-family: var(--font-roboto-slab), serif;
+}
+
+.text-nunito{
+  font-family: var(--font-nunito-sans), sans-serif;
+}
+
+.text-lato{
+  font-family: var(--font-lato), sans-serif;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
