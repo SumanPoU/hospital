@@ -75,7 +75,7 @@ A modern, full-stack hospital management system built with cutting-edge web tech
 ### Step 1: Clone the Repository
 
 \`\`\`bash
-git clone https://github.com/yourusername/sunrise-hospital.git
+git clone https://github.com/SumanPoU/sunrise-hospital.git
 cd sunrise-hospital
 \`\`\`
 
