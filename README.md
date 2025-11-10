@@ -74,33 +74,33 @@ A modern, full-stack hospital management system built with cutting-edge web tech
 
 ### Step 1: Clone the Repository
 
-\`\`\`bash
+```bash
 git clone https://github.com/SumanPoU/sunrise-hospital.git
 cd sunrise-hospital
-\`\`\`
+```
 
 ### Step 2: Install Dependencies
 
-\`\`\`bash
+```bash
 npm install
-\`\`\`
+```
 
 ### Step 3: Set Up Environment Variables
 
 Create a `.env.local` file in the root directory and add all required environment variables (see [Environment Variables](#environment-variables) section below).
 
-\`\`\`bash
+```bash
 cp .env.example .env.local
 # Then edit .env.local with your values
-\`\`\`
+```
 
 ### Step 4: Set Up the Database
 
 Run Prisma migrations to set up your PostgreSQL database:
 
-\`\`\`bash
+```bash
 npx prisma migrate dev --name init
-\`\`\`
+```
 
 This will:
 - Create all necessary tables in PostgreSQL
@@ -109,9 +109,9 @@ This will:
 
 ### Step 5: Generate Prisma Client
 
-\`\`\`bash
+```bash
 npx prisma generate
-\`\`\`
+```
 
 ---
 
@@ -119,7 +119,7 @@ npx prisma generate
 
 Create a `.env.local` file in the root directory with the following variables:
 
-\`\`\`env
+```env
 # Database
 DIRECT_URL=postgresql://user:password@localhost:5432/sunrise_hospital
 DATABASE_URL=postgresql://user:password@localhost:5432/sunrise_hospital
@@ -148,7 +148,7 @@ CONTACT_RECEIVER_EMAIL=admin@sunrisehospital.com
 TWILIO_ACCOUNT_SID=your_twilio_account_sid
 TWILIO_AUTH_TOKEN=your_twilio_auth_token
 TWILIO_PHONE_NUMBER=+1234567890
-\`\`\`
+```
 
 ### Environment Variable Descriptions
 
@@ -174,9 +174,9 @@ TWILIO_PHONE_NUMBER=+1234567890
 
 Start the development server with hot reload:
 
-\`\`\`bash
+```bash
 npm run dev
-\`\`\`
+```
 
 The application will be available at **http://localhost:3000**
 
@@ -184,17 +184,17 @@ The application will be available at **http://localhost:3000**
 
 Create an optimized production build:
 
-\`\`\`bash
+```bash
 npm run build
-\`\`\`
+```
 
 ### Start Production Server
 
 Run the application in production mode:
 
-\`\`\`bash
+```bash
 npm start
-\`\`\`
+```
 
 ---
 
@@ -202,7 +202,7 @@ npm start
 
 ### Local Testing with Production Build
 
-\`\`\`bash
+```bash
 # Create production build
 npm run build
 
@@ -210,7 +210,7 @@ npm run build
 npm start
 
 # Access at http://localhost:3000
-\`\`\`
+```
 
 ### Deploy to Vercel (Recommended)
 
@@ -220,11 +220,11 @@ npm start
 4. Add all environment variables in Vercel settings
 5. Click "Deploy"
 
-\`\`\`bash
+```bash
 # Or deploy via CLI
 npm i -g vercel
 vercel
-\`\`\`
+```
 
 ### Deploy to Other Platforms
 
@@ -265,9 +265,7 @@ Use these credentials to test different user roles:
 - **Login Page**: [http://localhost:3000/auth?tab=login](http://localhost:3000/auth?tab=login)
 - **Register Page**: [http://localhost:3000/auth?tab=register](http://localhost:3000/auth?tab=register)
 
-
 ---
-
 
 ## 🤝 Contributing
 
