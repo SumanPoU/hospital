@@ -66,14 +66,14 @@ export default function LoginForm({
     try {
       const result = await signIn("google", {
         redirect: false,
-        callbackUrl: "/dashboard/user", // Adjust this to your desired redirect URL
+        callbackUrl: "/user", // Adjust this to your desired redirect URL
       });
 
       if (result?.error) {
         toast.error("Google login failed");
       } else if (result?.ok) {
         toast.success("Login successful!");
-        window.location.href = "/dashboard/user"
+        window.location.href = "/user"
         onSuccess();
       }
     } catch (err) {

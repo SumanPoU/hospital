@@ -37,12 +37,12 @@ export async function proxy(request) {
     return NextResponse.next({ request: { headers } });
   }
 
-  if (pathname.startsWith("/dashboard")) {
+  if (pathname.startsWith("/user")) {
     if (!nextAuthToken)
       return NextResponse.redirect(new URL("/auth?tab=login", request.url));
   }
 
-  if (pathname.startsWith("/dashboard/user")) {
+  if (pathname.startsWith("/user")) {
     if (!nextAuthToken)
       return NextResponse.redirect(new URL("/auth?tab=login", request.url));
 
@@ -92,8 +92,8 @@ export async function proxy(request) {
 export const config = {
   matcher: [
     "/api/protected/:path*",
-    "/dashboard/:path*",
-    "/dashboard/user/:path*",
+    "/user/:path*",
+    "/user/:path*",
     "/admin/:path*",
     "/doctor/:path*",
     "/auth/:path*",

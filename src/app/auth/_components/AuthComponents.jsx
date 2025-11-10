@@ -52,7 +52,7 @@ function AuthPageContent() {
 
   const handleLoginSuccess = () => {
     // Middleware will handle the redirect based on role
-    window.location.href = "/dashboard/user";
+    window.location.href = "/user";
   };
 
   const handleRegisterSuccess = (data, email) => {

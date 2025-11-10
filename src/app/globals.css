@@ -167,15 +167,16 @@ button {
   font-family: var(--font-nunito-sans), sans-serif;
 }
 
-.text-roboto{
+.text-roboto {
   font-family: var(--font-roboto-slab), serif;
 }
 
-.text-nunito{
+.text-nunito,
+.nunito-text {
   font-family: var(--font-nunito-sans), sans-serif;
 }
 
-.text-lato{
+.text-lato {
   font-family: var(--font-lato), sans-serif;
 }
 
