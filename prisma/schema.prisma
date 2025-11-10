@@ -1,0 +1,66 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider  = "postgresql"
+    url       = env("DATABASE_URL")
+    directUrl = env("DIRECT_URL")
+}
+
+// --- Enums ---
+enum Role {
+    USER
+    DOCTOR
+    ADMIN
+}
+
+enum TokenType {
+    EMAIL_VERIFICATION
+    PHONE_VERIFICATION
+    PASSWORD_RESET
+}
+
+// --- Auth Models ---
+model User {
+    id            String    @id @default(cuid())
+    name          String?
+    email         String?   @unique
+    phone         String?   @unique
+    password      String?
+    avatar        String?
+    emailVerified DateTime?
+    phoneVerified DateTime?
+    provider      String?
+    providerId    String?
+    isDeleted     Boolean   @default(false)
+    role          Role      @default(USER)
+    createdAt     DateTime  @default(now())
+    updatedAt     DateTime  @updatedAt
+
+    sessions           Session[]
+    verificationTokens VerificationToken[]
+}
+
+model Session {
+    id        String   @id @default(cuid())
+    user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+    userId    String
+    token     String   @unique @db.VarChar(500)
+    createdAt DateTime @default(now())
+    expires   DateTime
+
+    @@index([expires])
+}
+
+model VerificationToken {
+    id        String    @id @default(cuid())
+    user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+    userId    String
+    token     String    @unique
+    type      TokenType
+    expires   DateTime
+    createdAt DateTime  @default(now())
+
+    @@index([expires])
+}

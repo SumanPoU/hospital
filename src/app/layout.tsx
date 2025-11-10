@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto_Slab, Nunito_Sans, Lato } from "next/font/google";
 import "./globals.css";
+import { Providers } from "@/components/Providers";
 
 // New Hospital-friendly fonts
 const robotoSlab = Roboto_Slab({
@@ -36,7 +37,7 @@ export default function RootLayout({
       <body
         className={`${robotoSlab.variable} ${nunitoSans.variable} ${lato.variable} antialiased`}
       >
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
